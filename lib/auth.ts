@@ -1,5 +1,5 @@
 import { UpstashRedisAdapter } from "@next-auth/upstash-redis-adapter";
-import NextAuth, { NextAuthOptions } from "next-auth";
+import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { db } from "./db";
 export const authOptions: NextAuthOptions = {
@@ -30,13 +30,18 @@ export const authOptions: NextAuthOptions = {
         picture: dbUser.image,
       };
     },
-    async session({token , session}) {
-        if(token){
-            session.user.id = token.id
-            session.user.name = token.name
-            session.user.email = token.email
-            session.user.image = token.picture
-        }
+    async session({ token, session }) {
+      if (token) {
+        session.user.id = token.id;
+        session.user.name = token.name;
+        session.user.email = token.email;
+        session.user.image = token.picture;
+      }
+
+      return session;
+    },
+    redirect() {
+      return "/dashboard";
     },
   },
 };
