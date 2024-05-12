@@ -1,9 +1,22 @@
 "use client";
 import React, { useState } from "react";
-import Button from "@/components/ui/Button";
+import Button from "@/components/Button";
+import { signIn } from "next-auth/react";
 
 const page = () => {
   const [loading, setLoading] = useState<boolean>(false);
+
+  async function loginWithGoogle() {
+    setLoading(true);
+    try {
+      await signIn("google");
+    } catch (error) {
+      // display error message to user
+    //   toast.error("Something went wrong with your login.");
+    } finally {
+      setLoading(false);
+    }
+  }
   return (
     <div className="flex min-h-full justify-center items-center py-12 sm:px-6 lg:px-8">
       <div className="flex flex-col max-w-md items-center space-y-8">
@@ -17,6 +30,7 @@ const page = () => {
           isLoading={loading}
           type="button"
           className="mx-w-sm mx-auto w-full"
+          onClick={loginWithGoogle}
         >
           {loading ? null : (
             <svg
