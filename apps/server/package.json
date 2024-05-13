@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "esbuild src/index.ts --platform=node --bundle --outdir=dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Puskar-Roy/Scaleable-Chat-App.git"
+  },
+  "author": "Puskar Roy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Puskar-Roy/Scaleable-Chat-App/issues"
+  },
+  "homepage": "https://github.com/Puskar-Roy/Scaleable-Chat-App#readme",
+  "description": "",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "esbuild": "^0.21.2",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.4",
+    "ts-node": "^10.9.2"
+  }
+}
