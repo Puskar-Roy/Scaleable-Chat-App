@@ -1,8 +1,8 @@
-"use client"
+"use client";
+
+import Button from "@/components/Button";
+import { signOut } from "next-auth/react";
+
 export default function Home() {
-  return (
-    <main className="dark:bg-slate-700">
-      Home
-    </main>
-  );
+  return <Button onClick={() => signOut()}>Sign out</Button>;
 }
