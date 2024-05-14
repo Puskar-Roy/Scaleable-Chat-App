@@ -6,7 +6,7 @@
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
     "build": "tsc -p .",
-    "watch":"tsc-watch --onSuccess \"node dist/index.js\" "
+    "watch": "tsc-watch --onSuccess \"node dist/index.js\" "
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "@types/express": "^4.17.21",
     "esbuild": "^0.21.2",
     "express": "^4.19.2",
+    "ioredis": "^5.4.1",
     "mongoose": "^8.3.4",
     "socket.io": "^4.7.5",
     "ts-node": "^10.9.2",
