@@ -1,16 +1,23 @@
 import express, { Request, Response, NextFunction, Express } from "express";
-;
+import SocketService from "./services/socket";
+import http from "http";
 
 const app: Express = express();
 app.use(express.json());
 
+const init = async () => {
+  const server = http.createServer(app);
 
-app.get("/", (req: Request, res: Response) => {
-  res.json({ success: true, message: "API IS WORKING 🥳" });
-});
+  const socketService = new SocketService();
+  socketService.io.attach(server);
+  app.get("/", (req: Request, res: Response) => {
+    res.json({ success: true, message: "API IS WORKING 🥳" });
+  });
 
-app.listen(3003, () => {
-  console.log(`[⚡] Server Is Running on http://localhost:3003`);
-});
+  socketService.initListners();
+  server.listen(3003, () => {
+    console.log(`[⚡] Server Is Running on http://localhost:3003`);
+  });
+};
 
-
+init();

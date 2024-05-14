@@ -16,5 +16,9 @@
   "packageManager": "pnpm@8.9.0",
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "server": "^1.0.39"
   }
 }
