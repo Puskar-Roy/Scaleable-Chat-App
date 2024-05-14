@@ -1,4 +1,5 @@
 import { SocketProvider } from "../context/SocketProvider";
+import './globals.css'
 
 export const metadata = {
   title: "Next.js",
