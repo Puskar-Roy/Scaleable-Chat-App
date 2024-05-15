@@ -1,12 +1,12 @@
-# Upscaling Node.js + Socket.IO Server
+# Upscaling Node.js + Socket.IO Server 🚀
 
 
 When scaling a Node.js + Socket.IO server, you might encounter several issues related to maintaining user connections and state consistency across multiple server instances. This document outlines common problems and provides solutions for effectively scaling your Socket.IO server.
 
 
-### Issues You Might Face
+### Issues 😧
 
-## User Connections Across Multiple Servers
+## User Connections Across Multiple Servers 📥
 
 ### Problem
 
